@@ -1,0 +1,19 @@
+.home {
+    position: absolute;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    background-image: url(@/assets/images/index.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    // background-size: cover;
+    top: 0;
+    left: 0;
+    display: flexbox;
+}
+
+.buttons {
+    position:absolute;
+    top: calc(50% - 50px);
+    left: 30%;
+}

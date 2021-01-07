@@ -1,0 +1,36 @@
+dices:
+  - name: d
+    args: 
+      - name: s
+        tyoe: int
+    template: d(\d+)
+    type: sum
+    sides: s
+    return: int
+    defaults:
+      - s: 6
+  - name: ad
+    args:
+      - name: s
+        type: int
+    template: ad([1-9]\d*)
+    sides: 100
+---
+rolls:
+  - sum:
+      type: pool
+      agg: sum
+  - over:
+      type: pool
+      agg: count
+      filter: gte
+      args:
+        - type: int
+      target: args[0]
+  - under:
+      type: pool
+      agg: count
+      filter: lte
+      args:
+        - type: int
+      target: args[0]
